@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlatosBijeiviur : MiniGameBrain
@@ -12,7 +13,7 @@ public class PlatosBijeiviur : MiniGameBrain
     public float timeRequested;
     public float time;
     
-    public GameObject roña;
+    public GameObject ronia;
 
     private void Awake()
     {
@@ -57,7 +58,7 @@ public class PlatosBijeiviur : MiniGameBrain
     {
 
         yield return new WaitForSeconds(timeRequested);
-        Destroy(roña);
+        Destroy(ronia);
     }
     private IEnumerator WaitTillBreak()
     {

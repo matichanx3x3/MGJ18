@@ -51,13 +51,8 @@ public class GameManager : MonoBehaviour
 
     public void FinishingMinigame(GameState gm)
     {
-        enableMov = true;
-        enableRot = true;
-        inMiniGame = false;
+        StartCoroutine(fadeOUT());
         gm_State = gm;
-        Cursor.visible = false;
-       // Cursor.lockState = CursorLockMode.Confined;
-        Cursor.lockState = CursorLockMode.Locked;
         badGame++;
         
     }
@@ -65,10 +60,8 @@ public class GameManager : MonoBehaviour
     public void FinishingMinigame()
     {
         StartCoroutine(fadeOUT());
-        Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Confined;
-        Cursor.lockState = CursorLockMode.Locked;
         goodGame++;
+        gm_State = GameState.glitch;
     }
 
     public void CalculateMoral()
@@ -105,11 +98,25 @@ public class GameManager : MonoBehaviour
     {
         canvasAnim.SetBool("FadeIn",true);
         yield return new WaitForSeconds(1);
+        switch (MiniGameBubbleCanvas.Instance.actualMinigame.name)
+        {
+            case "BCPlanta":
+                minigames[0].SetActive(false);
+                break;
+            case "BCPlatos":
+                minigames[1].SetActive(false);
+                break;
+            case "BCVentana":
+                minigames[2].SetActive(false);
+                break;
+        }
         canvasAnim.SetBool("FadeIn",false);
         enableMov = true;
         enableRot = true;
         inMiniGame = false;
-        gm_State = GameState.glitch;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         ChangeBTCameras(false);
         CalculateMoral();
     }

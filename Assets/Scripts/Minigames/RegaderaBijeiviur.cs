@@ -16,13 +16,14 @@ public class RegaderaBijeiviur : MiniGameBrain
     public float timeRequestedToWin;
     public float timeRequestedToLose;
     public float time;
+    public float timerWaterDrop;
 
     private void Update()
     {
         rb.velocity = Vector3.zero;
         if (this.transform.position.y > -2)
         {
-            rb.gravityScale = 2;
+            rb.gravityScale = 6;
         }
 
         if (isOnRange && timeRequestedToLose >= time)
@@ -33,13 +34,15 @@ public class RegaderaBijeiviur : MiniGameBrain
         }
         if (time >= timeRequestedToWin && time <= timeRequestedToLose)
         {
-            
+            GameManager.Instance.FinishingMinigame();
+            GameManager.Instance.goodGame++;
         }
         if (timeRequestedToLose <= time)
         {
             GameManager.Instance.FinishingMinigame(GameManager.GameState.plant);
             GameManager.Instance.badGame++;
         }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,8 +52,9 @@ public class RegaderaBijeiviur : MiniGameBrain
         }
 
         isOnRange = true;
-
+        
         Instantiate(waterGO, spawnerTransform.position, Quaternion.Euler(0, 0, 0));
+        
     }
 private void OnTriggerStay2D(Collider2D collision)
     {
@@ -58,6 +62,12 @@ private void OnTriggerStay2D(Collider2D collision)
         if (MiniGameManager._minigamemanager.isDragging)
         {
             this.transform.rotation = Quaternion.Euler(0, 0, 30);
+        }
+        timerWaterDrop += Time.deltaTime;
+        if (timerWaterDrop > 0.5f)
+        {
+            Instantiate(waterGO, spawnerTransform.position, Quaternion.Euler(0, 0, 0));
+            timerWaterDrop = 0;
         }
 
     }
