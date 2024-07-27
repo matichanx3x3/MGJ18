@@ -39,6 +39,7 @@ public class CC_Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.K))
         {
+            GameManager.Instance.FinishingMinigame();
            // GameManager.Instance.testVP(false);
         }
     }

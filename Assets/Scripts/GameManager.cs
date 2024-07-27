@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public int goodGame;
     public int badGame;
     public int diffGames;
+    public GameObject[] cameras;
+    public Animator canvasAnim;
+    
     public enum GameState
     {
         normal,
@@ -42,10 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (finishedMiniGame)
-        {
-            CalculateMoral();
-        }
+        
     }
 
     public void FinishingMinigame(GameState gm)
@@ -63,10 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void FinishingMinigame()
     {
-        enableMov = true;
-        enableRot = true;
-        inMiniGame = false;
-        gm_State = GameState.glitch;
+        StartCoroutine(fadeOUT());
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
@@ -85,27 +82,51 @@ public class GameManager : MonoBehaviour
 
     public void EnterMiniGame()
     {
-        enableMov = false;
-        enableRot = false;
-        inMiniGame = true;
+        StartCoroutine(fadeIN());
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.lockState = CursorLockMode.Confined;
     }
 
-    /*public void testVP(bool test)
+    IEnumerator fadeIN()
     {
-        if (test)
+        canvasAnim.SetBool("FadeIn",true);
+        yield return new WaitForSeconds(1);
+        canvasAnim.SetBool("FadeIn",false);
+        enableMov = false;
+        enableRot = false;
+        inMiniGame = true;
+        ChangeBTCameras(true);
+    }
+    
+    IEnumerator fadeOUT()
+    {
+        canvasAnim.SetBool("FadeIn",true);
+        yield return new WaitForSeconds(1);
+        canvasAnim.SetBool("FadeIn",false);
+        enableMov = true;
+        enableRot = true;
+        inMiniGame = false;
+        gm_State = GameState.glitch;
+        ChangeBTCameras(false);
+        CalculateMoral();
+    }
+
+    public void ChangeBTCameras(bool cam)
+    {
+        if (cam)
         {
-            float intensity = fmGrain.intensity.value;
-            fmGrain.intensity.Override(intensity + .01f);
+            cameras[0].SetActive(false);
+            cameras[1].SetActive(true);
+            
         }
 
-        if (!test)
+        if (!cam)
         {
-            float intensity = fmGrain.intensity.value;
-            fmGrain.intensity.Override(intensity - .01f);
+            cameras[0].SetActive(true);
+            cameras[1].SetActive(false);
         }
-    }*/
+    }
+
     
 }
