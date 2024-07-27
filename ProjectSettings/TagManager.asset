@@ -6,6 +6,7 @@ TagManager:
   tags:
   - wincon
   - losecon
+  - MiniGame
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Water
   - UI
   - draggable
-  - 
-  - 
+  - CC
+  - Mini
   - 
   - 
   - 

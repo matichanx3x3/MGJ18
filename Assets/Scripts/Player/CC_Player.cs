@@ -11,11 +11,13 @@ public class CC_Player : MonoBehaviour
     [SerializeField] private float speed;
 
     public GameObject test;
+    public GameObject[] minigames;
+    
+    public bool canInteract;
     // Start is called before the first frame update
     void Start()
     {
         cc_player = GetComponent<CharacterController>();
-
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class CC_Player : MonoBehaviour
             }
         }
         
-        if (Input.GetKey(KeyCode.J))
+        /*if (Input.GetKey(KeyCode.J))
         {
             //CamFX.Instance.ShakeCamNavigation(.2f,.3f);
             GameManager.Instance.EnterMiniGame();
@@ -55,8 +57,30 @@ public class CC_Player : MonoBehaviour
         {
             Debug.Log("hola");
             CamFX.Instance.ActiveShakeTimer();
-        }
+        }*/
 
+        if (canInteract)
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                
+                switch (MiniGameBubbleCanvas.Instance.actualMinigame.transform.name)
+                {
+                    case "BCPlanta":
+                        GameManager.Instance.EnterMiniGame();
+                        break;
+                    case "BCPlatos":
+                        GameManager.Instance.EnterMiniGame();
+                        break;
+                    case "BPVentana":
+                        GameManager.Instance.EnterMiniGame();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        
         if (Input.GetKey(KeyCode.U))
         {
             test.SetActive(true);
@@ -69,4 +93,6 @@ public class CC_Player : MonoBehaviour
         yield return new WaitForSeconds(num);
         cc_player.SimpleMove(vecPlayer);
     }
+    
+    
 }
