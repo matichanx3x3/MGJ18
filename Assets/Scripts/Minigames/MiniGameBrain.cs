@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
-public class MiniGameBrain : MonoBehaviour,IPointerClickHandler
+public class MiniGameBrain : MonoBehaviour,IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     // Start is called before the first frame update
     void Start()
@@ -25,4 +25,17 @@ public class MiniGameBrain : MonoBehaviour,IPointerClickHandler
             Debug.Log(name + " Game Object Right Clicked!");
         }
     }
+    public void OnDrag(PointerEventData eventData)
+    {
+        this.transform.position = Input.mousePosition;
+    }
+
+    public virtual void OnPointerDown(PointerEventData eventData)
+    {
+    }
+
+    public virtual void OnPointerUp(PointerEventData eventData)
+    {
+    }
+
 }
