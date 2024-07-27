@@ -9,6 +9,8 @@ public class CC_Player : MonoBehaviour
     [SerializeField] private Vector3 vectorPlayer;
 
     [SerializeField] private float speed;
+
+    public GameObject test;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class CC_Player : MonoBehaviour
         
         if (Input.GetKey(KeyCode.J))
         {
+            CamFX.Instance.ShakeCamNavigation(.2f,.3f);
             GameManager.Instance.EnterMiniGame();
             //GameManager.Instance.testVP(true);
         }
@@ -41,6 +44,22 @@ public class CC_Player : MonoBehaviour
         {
             GameManager.Instance.FinishingMinigame();
            // GameManager.Instance.testVP(false);
+        }
+
+        if (Input.GetKey(KeyCode.N))
+        {
+            GameManager.Instance.goodGame++;
+        }
+        
+        if (GameManager.Instance.goodGame > 5)
+        {
+            Debug.Log("hola");
+            CamFX.Instance.ActiveShakeTimer();
+        }
+
+        if (Input.GetKey(KeyCode.U))
+        {
+            test.SetActive(true);
         }
     }
     
