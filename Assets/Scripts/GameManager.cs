@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -14,8 +12,6 @@ public class GameManager : MonoBehaviour
     public int goodGame;
     public int badGame;
     public int diffGames;
-    public VolumeProfile ppVol;
-    public FilmGrain fmGrain;
     public enum GameState
     {
         normal,
@@ -42,7 +38,6 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
-        ppVol.TryGet(out fmGrain);
     }
 
     private void Update()
@@ -98,7 +93,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
     }
 
-    public void testVP(bool test)
+    /*public void testVP(bool test)
     {
         if (test)
         {
@@ -111,6 +106,6 @@ public class GameManager : MonoBehaviour
             float intensity = fmGrain.intensity.value;
             fmGrain.intensity.Override(intensity - .01f);
         }
-    }
+    }*/
     
 }

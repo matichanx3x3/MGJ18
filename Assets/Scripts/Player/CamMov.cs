@@ -28,9 +28,9 @@ public class CamMov : MonoBehaviour
             
             m_MouseDeltaX = Mathf.Clamp(m_MouseDeltaX, -m_yRotationLimit, m_yRotationLimit);
             StartCoroutine(camDelay(m_MouseDeltaX, m_MouseDeltaY));
-
+            
         }
-
+        
     }
 
     IEnumerator camDelay(float x, float y)
