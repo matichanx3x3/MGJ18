@@ -36,7 +36,7 @@ public class CC_Player : MonoBehaviour
         
         if (Input.GetKey(KeyCode.J))
         {
-            CamFX.Instance.ShakeCamNavigation(.2f,.3f);
+            //CamFX.Instance.ShakeCamNavigation(.2f,.3f);
             GameManager.Instance.EnterMiniGame();
             //GameManager.Instance.testVP(true);
         }

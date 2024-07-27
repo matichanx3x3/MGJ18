@@ -6,22 +6,64 @@ using UnityEngine.UI;
 
 public class PlatosBijeiviur : MiniGameBrain
 {
-    public Image _Image;
+    public SpriteRenderer _Image;
     public Sprite spriteBroken;
 
-    public override void OnPointerDown(PointerEventData eventData)
-    {
+    public float timeRequested;
+    public float time;
+    
+    public GameObject roña;
 
+    private void Awake()
+    {
+        time = timeRequested;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Entra");
+
+        if (!MiniGameManager._minigamemanager.isDragging)
+        {
+            if (collision.tag == "losecon")
+            {
+                StartCoroutine(WaitTillBreak());
+            }
+        }
+        if (collision.tag == "wincon")
+        {
+            StartCoroutine(WaitTillClean());
+        }
     }
 
-    public override void OnPointerUp(PointerEventData eventData)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-            _Image.sprite = spriteBroken;
-        //if()
-        //{
-        //}
-        //else if()
-        //{
-        //}
+        if (!MiniGameManager._minigamemanager.isDragging)
+        {
+            if (collision.tag == "losecon")
+            {
+                StartCoroutine(WaitTillBreak());
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Sale");
+        if (collision.tag == "wincon")
+        {
+            StopCoroutine(WaitTillClean());
+        }
+    }
+    private IEnumerator WaitTillClean()
+    {
+
+        yield return new WaitForSeconds(timeRequested);
+        Destroy(roña);
+    }
+    private IEnumerator WaitTillBreak()
+    {
+         yield return new WaitForSeconds(1);
+        _Image.sprite = spriteBroken;
+        yield return new WaitForSeconds(1);
+        Destroy(this.gameObject);
     }
 }

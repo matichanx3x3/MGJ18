@@ -7,12 +7,14 @@ using UnityEngine.UIElements;
 
 public class MiniGameBrain : MonoBehaviour,IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
+    public static MiniGameBrain _minigamebrain;
     Canvas _canva;
     Camera _camera;
     // Start is called before the first frame update
     private void Awake()
     {
         _canva = transform.parent.GetComponent<Canvas>();
+        _minigamebrain = this;
     }
     void Start()
     {
@@ -22,7 +24,6 @@ public class MiniGameBrain : MonoBehaviour,IPointerClickHandler, IPointerDownHan
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.mousePosition);
     }
     public void OnPointerClick(PointerEventData pointerEventData)
     {

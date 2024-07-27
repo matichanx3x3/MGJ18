@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         inMiniGame = false;
         gm_State = gm;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+       // Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
         badGame++;
         
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(fadeOUT());
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
         goodGame++;
     }
