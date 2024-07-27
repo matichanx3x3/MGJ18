@@ -6,27 +6,44 @@ using UnityEngine.UI;
 
 public class RegaderaBijeiviur : MiniGameBrain
 {
-    public bool isHolded;
-    public float stopLimit;
-    private void Start()
-    {
-        isHolded = true;
-    }
+    public GameObject plantGO;
+    public GameObject waterGO;
+    public Transform spawnerTransform;
+    public Rigidbody2D rb;
+
+    public bool isOnRange;
+
+    public float timeRequestedToWin;
+    public float timeRequestedToLose;
+    public float time;
+
     private void Update()
     {
-        if (!this.isHolded && transform.position.y >= stopLimit)
+        rb.velocity = Vector3.zero;
+        if (this.transform.position.y > -2)
         {
-            transform.position = transform.position + new Vector3(0, -100, 0) * Time.deltaTime;
+            rb.gravityScale = 2;
+        }
+
+        if (isOnRange && timeRequestedToLose <= time)
+        {
+            plantGO.transform.localScale = Vector3.one * time / timeRequestedToLose;
+            time += Time.deltaTime;
         }
     }
-
-    public override void OnPointerDown(PointerEventData eventData)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        isHolded = true;
+        this.transform.rotation = Quaternion.Euler(0, -30, 0);
+
+        Instantiate(waterGO, spawnerTransform.position, Quaternion.Euler(0, 0, 0));
     }
-
-    public override void OnPointerUp(PointerEventData eventData)
+private void OnTriggerStay2D(Collider2D collision)
     {
-        isHolded = false;
+        isOnRange = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isOnRange = false;
+        this.transform.rotation = Quaternion.Euler(0, -30, 0);
     }
 }
