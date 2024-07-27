@@ -25,25 +25,52 @@ public class RegaderaBijeiviur : MiniGameBrain
             rb.gravityScale = 2;
         }
 
-        if (isOnRange && timeRequestedToLose <= time)
+        if (isOnRange && timeRequestedToLose >= time)
         {
             plantGO.transform.localScale = Vector3.one * time / timeRequestedToLose;
+
             time += Time.deltaTime;
+        }
+        if (time >= timeRequestedToWin && time <= timeRequestedToLose)
+        {
+            
+        }
+        if (timeRequestedToLose <= time)
+        {
+            GameManager.Instance.FinishingMinigame(GameManager.GameState.plant);
+            GameManager.Instance.badGame++;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        this.transform.rotation = Quaternion.Euler(0, -30, 0);
+        if (MiniGameManager._minigamemanager.isDragging)
+        {
+            this.transform.rotation = Quaternion.Euler(0, 0, 30);
+        }
+
+        isOnRange = true;
 
         Instantiate(waterGO, spawnerTransform.position, Quaternion.Euler(0, 0, 0));
     }
 private void OnTriggerStay2D(Collider2D collision)
     {
-        isOnRange = true;
+        Debug.Log("ahdahah");
+        if (MiniGameManager._minigamemanager.isDragging)
+        {
+            this.transform.rotation = Quaternion.Euler(0, 0, 30);
+        }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         isOnRange = false;
-        this.transform.rotation = Quaternion.Euler(0, -30, 0);
+        this.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    private IEnumerator WaitToWin()
+    {
+        yield return new WaitForSeconds(1);
+        GameManager.Instance.goodGame++;
+        GameManager.Instance.FinishingMinigame();
     }
 }
