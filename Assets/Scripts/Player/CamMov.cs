@@ -21,7 +21,7 @@ public class CamMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.enableRot)
+        if (GameManager.Instance.enableRot)
         {
             m_MouseDeltaY += m_rotationSpeedX*Input.GetAxis("Mouse X");
             m_MouseDeltaX -= m_rotationSpeedY*Input.GetAxis("Mouse Y");

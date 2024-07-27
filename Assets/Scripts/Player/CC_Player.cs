@@ -19,12 +19,27 @@ public class CC_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float movX = Input.GetAxis("Horizontal");
-        float movY = Input.GetAxis("Vertical");
+        if (!GameManager.Instance.inMiniGame)
+        {
+            if (GameManager.Instance.enableMov)
+            {
+                float movX = Input.GetAxis("Horizontal");
+                float movY = Input.GetAxis("Vertical");
         
-        vectorPlayer = new Vector3(movX,0,movY) * speed;
-        vectorPlayer = transform.TransformDirection(vectorPlayer);
-        StartCoroutine(movDelay(vectorPlayer));
+                vectorPlayer = new Vector3(movX,0,movY) * speed;
+                vectorPlayer = transform.TransformDirection(vectorPlayer);
+                StartCoroutine(movDelay(vectorPlayer));
+            }
+        }
+        
+        if (Input.GetKey(KeyCode.J))
+        {
+            GameManager.Instance.EnterMiniGame();
+        }
+        if (Input.GetKey(KeyCode.K))
+        {
+            GameManager.Instance.FinishingMinigame(GameManager.GameState.toilet);
+        }
     }
     
     IEnumerator movDelay(Vector3 vecPlayer)

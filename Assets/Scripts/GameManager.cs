@@ -5,16 +5,45 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+    public  bool enableMov = true;
+    public  bool enableRot = true;
+    public  bool inMiniGame = false;
 
-    public static bool enableMov = true;
-    public static bool enableRot = true;
-
-    [SerializeField] private bool gm_EMOVE;
-    [SerializeField] private bool gm_EROT;
-
-    private void Awake()
+    public enum GameState
     {
-        gm_EMOVE = enableMov;
-        gm_EROT = enableRot;
+        normal,
+        glitch, 
+        toilet,
+        sink,
+        dishes
     }
+
+    public GameState gm_State;
+    void Awake() {
+        if (Instance != null) {
+            Destroy(gameObject);
+        }
+        else {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    public void FinishingMinigame(GameState gm)
+    {
+        enableMov = true;
+        enableRot = true;
+        inMiniGame = false;
+        gm_State = gm;
+    }
+
+    public void EnterMiniGame()
+    {
+        enableMov = false;
+        enableRot = false;
+        inMiniGame = true;
+    }
+
+    
 }
