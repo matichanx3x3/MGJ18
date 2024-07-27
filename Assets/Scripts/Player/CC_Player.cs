@@ -35,10 +35,11 @@ public class CC_Player : MonoBehaviour
         if (Input.GetKey(KeyCode.J))
         {
             GameManager.Instance.EnterMiniGame();
+            GameManager.Instance.testVP(true);
         }
         if (Input.GetKey(KeyCode.K))
         {
-            GameManager.Instance.FinishingMinigame(GameManager.GameState.toilet);
+            GameManager.Instance.testVP(false);
         }
     }
     

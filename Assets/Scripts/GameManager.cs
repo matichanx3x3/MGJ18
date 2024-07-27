@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int goodGame;
     public int badGame;
     public int diffGames;
-    public Volume ppVol;
+    public VolumeProfile ppVol;
     public FilmGrain fmGrain;
     public enum GameState
     {
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
+        ppVol.TryGet(out fmGrain);
     }
 
     private void Update()
@@ -49,22 +50,6 @@ public class GameManager : MonoBehaviour
         if (finishedMiniGame)
         {
             CalculateMoral();
-            if (diffGames >0)
-            {
-                if (ppVol.profile.TryGet(out fmGrain))
-                {
-                    float intensity = fmGrain.intensity.value;
-                    fmGrain.intensity.Override(intensity + .1f);
-                }
-            }else if (diffGames < 0)
-            {
-                if (ppVol.profile.TryGet(out fmGrain))
-                {
-                    float intensity = fmGrain.intensity.value;
-                    fmGrain.intensity.Override(intensity - .1f);
-                }
-            }
-            finishedMiniGame = true;
         }
     }
 
@@ -78,6 +63,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
         badGame++;
+        
     }
 
     public void FinishingMinigame()
@@ -96,6 +82,7 @@ public class GameManager : MonoBehaviour
     {
         
         diffGames = badGame - goodGame;
+        finishedMiniGame = true;
         // negativo hace las cosas bien
         // positivo hace las cosas mal
         
@@ -111,5 +98,19 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
     }
 
+    public void testVP(bool test)
+    {
+        if (test)
+        {
+            float intensity = fmGrain.intensity.value;
+            fmGrain.intensity.Override(intensity + .01f);
+        }
+
+        if (!test)
+        {
+            float intensity = fmGrain.intensity.value;
+            fmGrain.intensity.Override(intensity - .01f);
+        }
+    }
     
 }

@@ -34,7 +34,8 @@ public class MiniGameBrain : MonoBehaviour,IPointerClickHandler, IPointerDownHan
     }
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.position = Input.mousePosition * _canva.normalizedSortingGridSize;
+        //con canvas siempre anchored position!
+        this.GetComponent<RectTransform>().anchoredPosition = Input.mousePosition;
     }
     public virtual void OnPointerDown(PointerEventData eventData)
     {
