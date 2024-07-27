@@ -14,13 +14,13 @@ public class GameManager : MonoBehaviour
     public int diffGames;
     public GameObject[] cameras;
     public Animator canvasAnim;
-    
+    public GameObject[] minigames;
     public enum GameState
     {
         normal,
         glitch, 
-        toilet,
-        sink,
+        window,
+        plant,
         dishes
     }
 
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
+        SoundManager.Instance.PlayMusic("GameMusic");
     }
 
     private void Update()
@@ -80,12 +81,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void EnterMiniGame()
+    public void EnterMiniGame(int i)
     {
         StartCoroutine(fadeIN());
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.lockState = CursorLockMode.Confined;
+        minigames[i].SetActive(true);
     }
 
     IEnumerator fadeIN()

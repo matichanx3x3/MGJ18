@@ -11,9 +11,10 @@ public class CC_Player : MonoBehaviour
     [SerializeField] private float speed;
 
     public GameObject test;
-    public GameObject[] minigames;
     
     public bool canInteract;
+
+    private float timerMoveSound = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +30,22 @@ public class CC_Player : MonoBehaviour
             {
                 float movX = Input.GetAxis("Horizontal");
                 float movY = Input.GetAxis("Vertical");
-        
+                
                 vectorPlayer = new Vector3(movX,0,movY) * speed;
                 vectorPlayer = transform.TransformDirection(vectorPlayer);
+                if (vectorPlayer.magnitude != 0)
+                {
+                    timerMoveSound += Time.deltaTime;
+                    if (timerMoveSound >0.2f)
+                    { 
+                        SoundManager.Instance.PlaySFX("RobotWalk");
+                        timerMoveSound = 0;
+                    }
+                }
+                else
+                {
+                    SoundManager.Instance.Stop("RobotWalk");
+                }
                 StartCoroutine(movDelay(vectorPlayer));
             }
         }
@@ -67,13 +81,13 @@ public class CC_Player : MonoBehaviour
                 switch (MiniGameBubbleCanvas.Instance.actualMinigame.transform.name)
                 {
                     case "BCPlanta":
-                        GameManager.Instance.EnterMiniGame();
+                        GameManager.Instance.EnterMiniGame(0);
                         break;
                     case "BCPlatos":
-                        GameManager.Instance.EnterMiniGame();
+                        GameManager.Instance.EnterMiniGame(1);
                         break;
                     case "BPVentana":
-                        GameManager.Instance.EnterMiniGame();
+                        GameManager.Instance.EnterMiniGame(2);
                         break;
                     default:
                         break;

@@ -13,15 +13,6 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   sentences:
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere mi vitae
-    diam hendrerit, at pulvinar turpis facilisis. Nam turpis urna, pellentesque non
-    tincidunt a, finibus sodales tellus. Fusce vitae mi quis augue condimentum blandit
-    placerat nec velit. Integer ullamcorper hendrerit maximus.
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere mi vitae
-    diam hendrerit, at pulvinar turpis facilisis. Nam turpis urna, pellentesque non
-    tincidunt a, finibus sodales tellus. Fusce vitae mi quis augue condimentum blandit
-    placerat nec velit. Integer ullamcorper hendrerit maximus.
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere mi vitae
-    diam hendrerit, at pulvinar turpis facilisis. Nam turpis urna, pellentesque non
-    tincidunt a, finibus sodales tellus. Fusce vitae mi quis augue condimentum blandit
-    placerat nec velit. Integer ullamcorper hendrerit maximus.
+  - Solo soy un robot
+  - Deberia Limpiar
+  - Limpiando ando
