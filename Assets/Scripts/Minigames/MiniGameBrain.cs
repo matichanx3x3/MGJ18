@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 public class MiniGameBrain : MonoBehaviour,IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
+    Canvas _canva;
+    Camera _camera;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        _canva = transform.parent.GetComponent<Canvas>();
+    }
     void Start()
     {
         
@@ -15,7 +22,7 @@ public class MiniGameBrain : MonoBehaviour,IPointerClickHandler, IPointerDownHan
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(Input.mousePosition);
     }
     public void OnPointerClick(PointerEventData pointerEventData)
     {
@@ -27,9 +34,8 @@ public class MiniGameBrain : MonoBehaviour,IPointerClickHandler, IPointerDownHan
     }
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.position = Input.mousePosition;
+        this.transform.position = Input.mousePosition * _canva.normalizedSortingGridSize;
     }
-
     public virtual void OnPointerDown(PointerEventData eventData)
     {
     }

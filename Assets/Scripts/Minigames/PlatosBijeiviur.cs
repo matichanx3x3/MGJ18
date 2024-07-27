@@ -20,5 +20,8 @@ public class PlatosBijeiviur : MiniGameBrain
         //if()
         //{
         //}
+        //else if()
+        //{
+        //}
     }
 }
