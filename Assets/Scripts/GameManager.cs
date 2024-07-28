@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -17,6 +18,15 @@ public class GameManager : MonoBehaviour
     public GameObject[] minigames;
     public GameObject[] mgCols;
     public GameObject[] mgBbls;
+
+    public bool gamePlant;
+    public bool gameWindow;
+    public bool gameDishes;
+
+    public GameObject textPlant;
+    public GameObject textDishes;
+    public GameObject textWindow;
+
     public enum GameState
     {
         normal,
@@ -51,6 +61,18 @@ public class GameManager : MonoBehaviour
         if (goodGame >= 2)
         {
             CamFX.Instance.activeRandomTimer = true;
+        }
+        if(gameDishes)
+        {
+            textDishes.SetActive(false);
+        }
+        if(gamePlant)
+        {
+            textPlant.SetActive(false);
+        }
+        if(gameWindow)
+        {
+            textWindow.SetActive(false);
         }
     }
 
