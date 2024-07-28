@@ -29,13 +29,12 @@ public class mmasgnnknan : MonoBehaviour
                 GameManager.Instance.FinishingMinigame();
                 done = true;
             }  
-            if(bad> good)
+            if(bad>good)
             {
-                GameManager.Instance.FinishingMinigame();
+                GameManager.Instance.FinishingMinigame(GameManager.GameState.plant);
                 done = true;
             }
             GameManager.Instance.gameDishes = true;
-            GameManager.Instance.FinishingMinigame(GameManager.GameState.plant);
         }
     }
 }
