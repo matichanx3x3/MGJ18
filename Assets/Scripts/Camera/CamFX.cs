@@ -22,6 +22,7 @@ public class CamFX : MonoBehaviour
         DefaultShakeTimer = ShakeTimer;
         cam = Camera.main;
         ppVol.TryGet(out fmGrain);
+        firstFXGrain();
     }
 
     private void Update()
@@ -59,6 +60,11 @@ public class CamFX : MonoBehaviour
     {
         float intensity = fmGrain.intensity.value;
         fmGrain.intensity.Override(intensity + .1f);    
+    }
+
+    public void firstFXGrain()
+    {
+        fmGrain.intensity.Override(.1f); 
     }
     
     public void Shake(float duration, float strength) => Instance.OnShake(duration, strength);

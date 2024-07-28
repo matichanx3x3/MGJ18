@@ -48,8 +48,8 @@ MonoBehaviour:
   - {fileID: 24100000, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
   sounds:
   - name: RobotWalk
-    clip: {fileID: 8300000, guid: edb30c5d3dc810e4da578a53e6845709, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: f7116bb9d43777a41a20869e659eb0d1, type: 3}
+    volume: 0.654
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 1
@@ -84,6 +84,33 @@ MonoBehaviour:
     mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
     source: {fileID: 0}
   - name: CameraFX
+    clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}
+    volume: 0.253
+    volumeVariance: 0.18
+    pitch: 1.13
+    pitchVariance: 0.2
+    loop: 1
+    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: EnterPlanta
+    clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}
+    volume: 0.253
+    volumeVariance: 0.18
+    pitch: 1.13
+    pitchVariance: 0.2
+    loop: 1
+    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: EnterPlato
+    clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}
+    volume: 0.253
+    volumeVariance: 0.18
+    pitch: 1.13
+    pitchVariance: 0.2
+    loop: 1
+    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: EnterVentana
     clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}
     volume: 0.253
     volumeVariance: 0.18
