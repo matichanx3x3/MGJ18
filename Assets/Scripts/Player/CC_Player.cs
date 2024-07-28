@@ -95,10 +95,10 @@ public class CC_Player : MonoBehaviour
             }
         }
         
-        if (Input.GetKey(KeyCode.U))
+        /*if (Input.GetKey(KeyCode.U))
         {
             test.SetActive(true);
-        }
+        }*/
     }
     
     IEnumerator movDelay(Vector3 vecPlayer)

@@ -137,3 +137,21 @@ MonoBehaviour:
     loop: 1
     mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
     source: {fileID: 0}
+  - name: DiagRobot
+    clip: {fileID: 8300000, guid: 0d586465d894eaf41bb5b4bdb3c65395, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -8669901539640003167, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: DiagHumano
+    clip: {fileID: 8300000, guid: 2171f11c281673b4cba69ed7a936a27c, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -8669901539640003167, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}

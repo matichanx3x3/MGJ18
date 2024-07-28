@@ -21,7 +21,7 @@ public class IntroManager : MonoBehaviour
     public void EnterGame()
     {
         SoundManager.Instance.InstantStop("IntroUI");
-        SceneManager.LoadScene("TestCasa");
+        SceneManager.LoadScene("SceneTransition");
     }
 
     public void ExitGame()

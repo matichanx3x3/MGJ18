@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         if (!inMiniGame && gamePlant && gameDishes && gameWindow)
         {
             textbbls.SetActive(false);
-            if (goodGame == 3)
+            if (goodGame > badGame)
             {
                 SceneManager.LoadScene("FinalBueno");
             }
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("FinalMalo");
             }
 
-            if ((badGame > goodGame || badGame < goodGame) && (badGame != 3 && goodGame != 3))
+            if ((diffGames == 1))
             {
                 SceneManager.LoadScene("FinalRegular");
             }

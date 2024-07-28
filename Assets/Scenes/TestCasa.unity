@@ -365,7 +365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -307.25497, y: 171.5}
+  m_AnchoredPosition: {x: 305.745, y: 171.5}
   m_SizeDelta: {x: -614.5101, y: -343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402811964
@@ -441,7 +441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -290, y: 192}
+  m_AnchoredPosition: {x: 323, y: 192}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &414755763
@@ -733,6 +733,7 @@ MonoBehaviour:
   time: 0
   ronia: {fileID: 0}
   cleaned: 0
+  alreadyCounted: 0
 --- !u!114 &431152746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,7 +968,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1301,7 +1302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -290, y: 128}
+  m_AnchoredPosition: {x: 323, y: 128}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789450150
@@ -1704,8 +1705,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 90
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -2007,7 +2008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -290, y: 161}
+  m_AnchoredPosition: {x: 323, y: 161}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046489004
@@ -4190,6 +4191,7 @@ MonoBehaviour:
   time: 0
   ronia: {fileID: 0}
   cleaned: 0
+  alreadyCounted: 0
 --- !u!222 &5001167489181682332
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4440,6 +4442,7 @@ MonoBehaviour:
   time: 0
   ronia: {fileID: 0}
   cleaned: 0
+  alreadyCounted: 0
 --- !u!222 &5001167489681414960
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4496,6 +4499,7 @@ MonoBehaviour:
   time: 0
   ronia: {fileID: 0}
   cleaned: 0
+  alreadyCounted: 0
 --- !u!224 &5001167489681414963
 RectTransform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: e7ab471301bb044498ed85066b25db3b
   - enabled: 1
+    path: Assets/Scenes/SceneTransition.unity
+    guid: 9343b7e62fea9924eb8528acee7e579d
+  - enabled: 1
     path: Assets/Scenes/TestCasa.unity
     guid: f1730330ecfd25845b44c13bbfa1eb6d
   - enabled: 1

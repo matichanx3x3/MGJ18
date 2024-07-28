@@ -16,6 +16,7 @@ public class PlatosBijeiviur : MiniGameBrain
     public GameObject ronia;
 
     public bool cleaned;
+    public bool alreadyCounted;
 
     private void Awake()
     {
@@ -60,8 +61,12 @@ public class PlatosBijeiviur : MiniGameBrain
     {
             yield return new WaitForSeconds(timeRequested);
             Destroy(ronia);
-            mmasgnnknan._mmasgnnknan.good++;
-            mmasgnnknan._mmasgnnknan.counter++;
+            if (!alreadyCounted)
+            {
+                mmasgnnknan._mmasgnnknan.good++;
+                mmasgnnknan._mmasgnnknan.counter++;
+                alreadyCounted = true;
+            }
     }
     private IEnumerator WaitTillBreak()
     {
@@ -70,7 +75,11 @@ public class PlatosBijeiviur : MiniGameBrain
         _Image.sprite = spriteBroken;
         yield return new WaitForSeconds(1);
         Destroy(this.gameObject);
-        mmasgnnknan._mmasgnnknan.bad++;
-        mmasgnnknan._mmasgnnknan.counter++;
+        if (!alreadyCounted)
+        {
+            mmasgnnknan._mmasgnnknan.bad++;
+            mmasgnnknan._mmasgnnknan.counter++;
+            alreadyCounted = true;
+        }
     }
 }
