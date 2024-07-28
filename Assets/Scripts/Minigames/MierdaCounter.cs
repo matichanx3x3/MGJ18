@@ -12,6 +12,8 @@ public class MierdaCounter : MonoBehaviour
     public Sprite spriteroto;
     public SpriteRenderer spriterenderer;
 
+    public GameObject parentGO;
+
     public bool finishGame = false;
     // Start is called before the first frame update
     private void Awake()
@@ -30,15 +32,21 @@ public class MierdaCounter : MonoBehaviour
         {
             Debug.Log("hola entrando");
             GameManager.Instance.FinishingMinigame();
+            finishGame = true;  
         }
         if (!finishGame && (counter == 0 && (mal - bien) > 0 ))
         {
             Debug.Log("hola entrando");
             GameManager.Instance.FinishingMinigame(GameManager.GameState.window);
+            finishGame = true;
         }
         if (mal >= 6)
         {
             spriterenderer.sprite = spriteroto;
+        }
+        if (finishGame)
+        {
+            Destroy(parentGO);
         }
     }
     public void SumarLimpiaBien()

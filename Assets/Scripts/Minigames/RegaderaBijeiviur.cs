@@ -19,6 +19,8 @@ public class RegaderaBijeiviur : MiniGameBrain
     public float timerWaterDrop;
     public bool hasFinished;
 
+    public GameObject parentGO;
+
     private void Update()
     {
         rb.velocity = Vector3.zero;
@@ -37,23 +39,14 @@ public class RegaderaBijeiviur : MiniGameBrain
 
             time += Time.deltaTime;
         }
-        if (time >= timeRequestedToWin && time <= timeRequestedToLose && !MiniGameManager._minigamemanager.isDragging)
+        if (time >= timeRequestedToWin && time <= timeRequestedToLose && !MiniGameManager._minigamemanager.isDragging && !hasFinished)
         {
             GameManager.Instance.FinishingMinigame();
-            if (!hasFinished)
-            {
-                GameManager.Instance.goodGame++;
-                hasFinished = true;
-            }
+
         }
-        if (timeRequestedToLose <= time)
+        if (timeRequestedToLose <= time && !hasFinished)
         {
             GameManager.Instance.FinishingMinigame(GameManager.GameState.plant);
-            if(!hasFinished)
-            {
-                GameManager.Instance.badGame++;
-                hasFinished = true;
-            }
         }
 
     }
@@ -69,7 +62,7 @@ public class RegaderaBijeiviur : MiniGameBrain
         Instantiate(waterGO, spawnerTransform.position, Quaternion.Euler(0, 0, 0));
         
     }
-private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("ahdahah");
         if (MiniGameManager._minigamemanager.isDragging)
