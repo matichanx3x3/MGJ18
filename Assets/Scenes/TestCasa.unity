@@ -464,6 +464,7 @@ MonoBehaviour:
   timeRequested: 0
   time: 0
   ronia: {fileID: 0}
+  cleaned: 0
 --- !u!114 &431152746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1649,7 +1650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 579903158261559120, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 579903158261559122, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
       propertyPath: m_RootOrder
@@ -1695,10 +1696,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 579903159112919085, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159112919085, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159112919085, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159112919085, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159112919086, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159112919086, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159112919086, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159112919086, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159546538944, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 579903159546538944, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
       propertyPath: m_GravityScale
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 579903159546538947, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: colorA.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159546538947, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: colorA.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159546538947, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: colorA.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159546538947, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: colorB.b
+      value: 0.6226415
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159546538947, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: colorB.g
+      value: 0.6226415
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159546538947, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: colorB.r
+      value: 0.6226415
+      objectReference: {fileID: 0}
+    - target: {fileID: 579903159546538947, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
+      propertyPath: parentGO
+      value: 
+      objectReference: {fileID: 1116379410}
     - target: {fileID: 579903159546538950, guid: cdae9cc388a3a9e4891fc212610ef8f5, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1840,6 +1905,12 @@ MonoBehaviour:
   timeRequestedToLose: 0
   time: 0
   timerWaterDrop: 0
+  hasFinished: 0
+  win: 0
+  lose: 0
+  colorA: {r: 0, g: 0, b: 0, a: 0}
+  colorB: {r: 0, g: 0, b: 0, a: 0}
+  parentGO: {fileID: 0}
 --- !u!114 &1223292367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3630,6 +3701,7 @@ MonoBehaviour:
   timeRequested: 0
   time: 0
   ronia: {fileID: 0}
+  cleaned: 0
 --- !u!222 &5001167489181682332
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3879,6 +3951,7 @@ MonoBehaviour:
   timeRequested: 0
   time: 0
   ronia: {fileID: 0}
+  cleaned: 0
 --- !u!222 &5001167489681414960
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3934,6 +4007,7 @@ MonoBehaviour:
   timeRequested: 0
   time: 0
   ronia: {fileID: 0}
+  cleaned: 0
 --- !u!224 &5001167489681414963
 RectTransform:
   m_ObjectHideFlags: 0

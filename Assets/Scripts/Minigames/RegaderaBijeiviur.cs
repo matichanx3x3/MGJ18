@@ -18,6 +18,11 @@ public class RegaderaBijeiviur : MiniGameBrain
     public float time;
     public float timerWaterDrop;
     public bool hasFinished;
+    public bool win;
+    public bool lose;
+
+    public Color colorA;
+    public Color colorB;
 
     public GameObject parentGO;
 
@@ -26,27 +31,54 @@ public class RegaderaBijeiviur : MiniGameBrain
         rb.velocity = Vector3.zero;
         if (this.transform.position.y > -2)
         {
-            rb.gravityScale = 6;
+            rb.gravityScale = 0;
         }
         else if (MiniGameManager._minigamemanager.isDragging)
         {
             isOnRange = false;
         }
-        
-        if (isOnRange && timeRequestedToLose >= time)
+
+        if (isOnRange && timeRequestedToWin >= time)
         {
-            plantGO.transform.localScale = Vector3.one * time / timeRequestedToLose;
+            plantGO.transform.localScale = Vector3.one * time / timeRequestedToWin;
 
             time += Time.deltaTime;
         }
-        if (time >= timeRequestedToWin && time <= timeRequestedToLose && !MiniGameManager._minigamemanager.isDragging && !hasFinished)
+        if (isOnRange && timeRequestedToLose >= time && timeRequestedToWin <= time)
+        {
+            plantGO.transform.localScale = Vector3.one * (3 - (time - 5 / timeRequestedToLose - 5)) / 3;
+
+            time += Time.deltaTime;
+        }
+        if(time>timeRequestedToWin && !MiniGameManager._minigamemanager.isDragging)
+        {
+            win = true;
+            hasFinished = true;
+        }
+        if (time > timeRequestedToLose && !MiniGameManager._minigamemanager.isDragging)
+        {
+            lose = true;
+            win = false;
+            hasFinished = true;
+        }
+
+        if (hasFinished && win)
         {
             GameManager.Instance.FinishingMinigame();
-
-        }
-        if (timeRequestedToLose <= time && !hasFinished)
+            GameManager.Instance.goodGame++;
+            GameManager.Instance.goodGame = GameManager.Instance.goodGame - 0.5f;
+            GameManager.Instance.goodGame = GameManager.Instance.goodGame - 0.5f;
+            Destroy(parentGO);  
+            hasFinished = false;
+        }       
+        if (hasFinished && lose)
         {
+            hasFinished = false;
             GameManager.Instance.FinishingMinigame(GameManager.GameState.plant);
+            GameManager.Instance.badGame++;
+            GameManager.Instance.badGame = GameManager.Instance.badGame - 0.5f;
+            GameManager.Instance.badGame = GameManager.Instance.badGame - 0.5f;
+            Destroy(parentGO);
         }
 
     }
