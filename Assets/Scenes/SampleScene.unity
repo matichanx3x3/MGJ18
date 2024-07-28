@@ -827,7 +827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &874705621
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1406,6 +1406,7 @@ MonoBehaviour:
   timeRequestedToWin: 5
   timeRequestedToLose: 8
   time: 0
+  timerWaterDrop: 0
 --- !u!1 &1417137253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,6 +2404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ventanadef
       objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451478, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
 --- !u!1001 &8678539193706500294
@@ -2530,7 +2535,7 @@ MonoBehaviour:
   spriteBroken: {fileID: 878449213, guid: 160eef3030f62cf41b2bfcb08feb6370, type: 3}
   timeRequested: 3
   time: 0
-  "ro\xF1a": {fileID: 8723381085358863275}
+  ronia: {fileID: 0}
 --- !u!50 &8821658091815939497
 Rigidbody2D:
   serializedVersion: 4

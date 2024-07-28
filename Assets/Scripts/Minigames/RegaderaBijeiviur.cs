@@ -32,7 +32,7 @@ public class RegaderaBijeiviur : MiniGameBrain
 
             time += Time.deltaTime;
         }
-        if (time >= timeRequestedToWin && time <= timeRequestedToLose)
+        if (time >= timeRequestedToWin && time <= timeRequestedToLose && !MiniGameManager._minigamemanager.isDragging)
         {
             GameManager.Instance.FinishingMinigame();
             GameManager.Instance.goodGame++;
