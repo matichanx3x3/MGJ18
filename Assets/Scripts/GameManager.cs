@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] cameras;
     public Animator canvasAnim;
     public GameObject[] minigames;
+    public GameObject[] mgCols;
+    public GameObject[] mgBbls;
     public enum GameState
     {
         normal,
@@ -101,13 +103,23 @@ public class GameManager : MonoBehaviour
         switch (MiniGameBubbleCanvas.Instance.actualMinigame.name)
         {
             case "BCPlanta":
-                minigames[0].SetActive(false);
+                Debug.Log("hola");
+                Destroy(minigames[0].gameObject);
+                Destroy(mgCols[0].gameObject);
+                //minigames[0].SetActive(false);
                 break;
             case "BCPlatos":
-                minigames[1].SetActive(false);
+                Debug.Log("hola");
+                Destroy(minigames[1].gameObject);
+                Destroy(mgCols[1].gameObject);
+                //minigames[1].SetActive(false);
                 break;
             case "BCVentana":
-                minigames[2].SetActive(false);
+                
+                Debug.Log("hola");
+                Destroy(minigames[2].gameObject);
+                Destroy(mgCols[2].gameObject);
+                //minigames[2].SetActive(false);
                 break;
         }
         canvasAnim.SetBool("FadeIn",false);

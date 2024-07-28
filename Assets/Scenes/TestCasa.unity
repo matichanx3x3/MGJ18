@@ -1349,7 +1349,7 @@ GameObject:
   - component: {fileID: 1003861981}
   - component: {fileID: 1003861982}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1748,7 +1748,7 @@ MonoBehaviour:
   - {fileID: 24100000, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
   sounds:
   - name: RobotWalk
-    clip: {fileID: 8300000, guid: 781881be4a795a54485e405a7b574586, type: 3}
+    clip: {fileID: 8300000, guid: edb30c5d3dc810e4da578a53e6845709, type: 3}
     volume: 0.3
     volumeVariance: 0.1
     pitch: 1
@@ -2031,6 +2031,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1479746262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1569359487}
+    m_Modifications:
+    - target: {fileID: 8391197011829042477, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451478, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_Name
+      value: Ventanadef
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391197012199451478, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+--- !u!4 &1479746263 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8391197012199451304, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+  m_PrefabInstance: {fileID: 1479746262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1479746264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8391197012199451478, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+  m_PrefabInstance: {fileID: 1479746262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1531688859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,6 +2390,7 @@ Transform:
   - {fileID: 1003861981}
   - {fileID: 1116379409}
   - {fileID: 1330396658}
+  - {fileID: 1479746263}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2628,7 +2704,15 @@ MonoBehaviour:
   minigames:
   - {fileID: 1116379410}
   - {fileID: 1330396659}
-  - {fileID: 1582767340}
+  - {fileID: 1479746264}
+  mgCols:
+  - {fileID: 1615034580}
+  - {fileID: 1824324437}
+  - {fileID: 737958139}
+  mgBbls:
+  - {fileID: 2138618250}
+  - {fileID: 543495671}
+  - {fileID: 428218768}
   gm_State: 0
 --- !u!4 &1702143609
 Transform:

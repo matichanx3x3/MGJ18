@@ -11,6 +11,8 @@ public class MierdaCounter : MonoBehaviour
 
     public Sprite spriteroto;
     public SpriteRenderer spriterenderer;
+
+    public bool finishGame = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -24,12 +26,14 @@ public class MierdaCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (counter == 0 && (bien - mal) > 0 )
+        if (!finishGame && (counter == 0 && (bien - mal) > 0 ))
         {
+            finishGame = true;
             GameManager.Instance.FinishingMinigame();
         }
-        if (counter == 0 && (mal - bien) > 0 )
+        if (!finishGame && (counter == 0 && (mal - bien) > 0 ))
         {
+            finishGame = true;
             GameManager.Instance.FinishingMinigame(GameManager.GameState.window);
         }
         if (mal >= 6)
