@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     public bool gamePlant;
     public bool gameWindow;
     public bool gameDishes;
-
+    public GameObject textbbls;
     public GameObject textPlant;
     public GameObject textDishes;
     public GameObject textWindow;
@@ -58,21 +59,46 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (goodGame >= 2)
+        if (goodGame >= 1)
         {
             CamFX.Instance.activeRandomTimer = true;
         }
         if(gameDishes)
         {
+            Destroy(mgCols[1]);
+            mgBbls[1].SetActive(false);
             textDishes.SetActive(false);
         }
         if(gamePlant)
         {
+            Destroy(mgCols[0]);
+            mgBbls[0].SetActive(false);
             textPlant.SetActive(false);
         }
         if(gameWindow)
         {
+            Destroy(mgCols[2]);
+            mgBbls[2].SetActive(false);
             textWindow.SetActive(false);
+        }
+
+        if (!inMiniGame && gamePlant && gameDishes && gameWindow)
+        {
+            textbbls.SetActive(false);
+            if (goodGame == 3)
+            {
+                SceneManager.LoadScene("FinalBueno");
+            }
+
+            if (badGame == 3)
+            {
+                SceneManager.LoadScene("FinalMalo");
+            }
+
+            if ((badGame > goodGame || badGame < goodGame) && (badGame != 3 && goodGame != 3))
+            {
+                SceneManager.LoadScene("FinalRegular");
+            }
         }
     }
 
@@ -150,6 +176,7 @@ public class GameManager : MonoBehaviour
                 //minigames[2].SetActive(false);
                 break;
         }
+        MiniGameBubbleCanvas.Instance.actualMinigame = null;
         canvasAnim.SetBool("FadeIn",false);
         enableMov = true;
         enableRot = true;

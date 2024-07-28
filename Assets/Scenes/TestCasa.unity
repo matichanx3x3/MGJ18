@@ -2638,6 +2638,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8391197012636324453, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
+      propertyPath: parentGO
+      value: 
+      objectReference: {fileID: 1479746264}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3059c72e91769d641b54020d4e0728e0, type: 3}
 --- !u!4 &1479746263 stripped
@@ -3264,6 +3268,7 @@ MonoBehaviour:
   gamePlant: 0
   gameWindow: 0
   gameDishes: 0
+  textbbls: {fileID: 1843148283}
   textPlant: {fileID: 414755761}
   textDishes: {fileID: 1046489002}
   textWindow: {fileID: 789450148}

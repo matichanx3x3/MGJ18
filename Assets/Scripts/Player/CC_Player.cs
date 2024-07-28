@@ -75,7 +75,7 @@ public class CC_Player : MonoBehaviour
 
         if (canInteract)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && MiniGameBubbleCanvas.Instance.actualMinigame != null)
             {
                 
                 switch (MiniGameBubbleCanvas.Instance.actualMinigame.transform.name)

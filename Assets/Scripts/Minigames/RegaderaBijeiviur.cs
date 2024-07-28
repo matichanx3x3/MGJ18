@@ -62,6 +62,11 @@ public class RegaderaBijeiviur : MiniGameBrain
             hasFinished = true;
         }
 
+        if (hasFinished)
+        {
+            GameManager.Instance.gamePlant = true;
+        }
+        
         if (hasFinished && win)
         {
             GameManager.Instance.FinishingMinigame();

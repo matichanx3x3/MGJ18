@@ -46,6 +46,7 @@ public class MierdaCounter : MonoBehaviour
         }
         if (finishGame)
         {
+            GameManager.Instance.gameWindow = true;
             Destroy(parentGO);
         }
     }

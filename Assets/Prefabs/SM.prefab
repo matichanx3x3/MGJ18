@@ -80,8 +80,8 @@ MonoBehaviour:
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.2
-    loop: 1
-    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    loop: 0
+    mixerGroup: {fileID: -8669901539640003167, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
     source: {fileID: 0}
   - name: CameraFX
     clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}

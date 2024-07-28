@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: e7ab471301bb044498ed85066b25db3b
+  - enabled: 1
     path: Assets/Scenes/TestCasa.unity
     guid: f1730330ecfd25845b44c13bbfa1eb6d
+  - enabled: 1
+    path: Assets/Scenes/FinalBueno.unity
+    guid: e1cade71ba8264d4885a6cdd031c4f76
+  - enabled: 1
+    path: Assets/Scenes/FinalMalo.unity
+    guid: 4bf2dd6bb40975c418d0a78ea1a4128c
+  - enabled: 1
+    path: Assets/Scenes/FinalRegular.unity
+    guid: b008bc8a8b1c923458e07cfcfb60bacc
   m_configObjects: {}
