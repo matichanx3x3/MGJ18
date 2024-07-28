@@ -49,10 +49,10 @@ MonoBehaviour:
   sounds:
   - name: RobotWalk
     clip: {fileID: 8300000, guid: f7116bb9d43777a41a20869e659eb0d1, type: 3}
-    volume: 0.654
+    volume: 0.8
     volumeVariance: 0.1
     pitch: 1
-    pitchVariance: 1
+    pitchVariance: 0.1
     loop: 0
     mixerGroup: {fileID: -8669901539640003167, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
     source: {fileID: 0}
@@ -93,29 +93,47 @@ MonoBehaviour:
     mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
     source: {fileID: 0}
   - name: EnterPlanta
-    clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}
-    volume: 0.253
-    volumeVariance: 0.18
-    pitch: 1.13
-    pitchVariance: 0.2
-    loop: 1
+    clip: {fileID: 8300000, guid: 4bcd3aafa8a668348a609251e22fd59a, type: 3}
+    volume: 0.8
+    volumeVariance: 0
+    pitch: 1.2
+    pitchVariance: 0
+    loop: 0
     mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
     source: {fileID: 0}
   - name: EnterPlato
-    clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}
-    volume: 0.253
-    volumeVariance: 0.18
-    pitch: 1.13
-    pitchVariance: 0.2
-    loop: 1
+    clip: {fileID: 8300000, guid: 9feb64b80db228c409be3cb614827213, type: 3}
+    volume: 0.8
+    volumeVariance: 0
+    pitch: 1.2
+    pitchVariance: 0
+    loop: 0
     mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
     source: {fileID: 0}
   - name: EnterVentana
-    clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}
-    volume: 0.253
-    volumeVariance: 0.18
-    pitch: 1.13
-    pitchVariance: 0.2
+    clip: {fileID: 8300000, guid: 04fc550f02625cd49bdb4354e82a266a, type: 3}
+    volume: 0.8
+    volumeVariance: 0
+    pitch: 1.2
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: Agarrar
+    clip: {fileID: 8300000, guid: ee3b325db84a741409b2e3cec022c549, type: 3}
+    volume: 0.5
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: -8669901539640003167, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: IntroUI
+    clip: {fileID: 8300000, guid: 99624ef079227064489979a4ef6d7717, type: 3}
+    volume: 0.8
+    volumeVariance: 0
+    pitch: 0.8
+    pitchVariance: 0
     loop: 1
     mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
     source: {fileID: 0}

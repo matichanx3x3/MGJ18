@@ -35,6 +35,7 @@ public class MiniGameManager : MonoBehaviour
                     Debug.Log(hit.collider.gameObject.name);
                     selectedobject = hit.collider.gameObject;
                     isDragging = true;
+                    SoundManager.Instance.PlaySFX("Agarrar");
                 }
             }
             if (isDragging)
