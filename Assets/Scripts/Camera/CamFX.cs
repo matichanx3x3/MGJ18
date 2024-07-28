@@ -42,6 +42,7 @@ public class CamFX : MonoBehaviour
         print("hola");
         cam.transform.DOShakePosition(duration, strength);
         cam.transform.DOShakeRotation(duration, strength);
+        SoundManager.Instance.PlaySFX("CameraFX");
     }
     
     public void ShakeCamNavigation(float duration, float strength)
@@ -52,6 +53,12 @@ public class CamFX : MonoBehaviour
     public void ActiveShakeTimer()
     {
         activeRandomTimer = true;
+    }
+
+    public void addFXGrain()
+    {
+        float intensity = fmGrain.intensity.value;
+        fmGrain.intensity.Override(intensity + .1f);    
     }
     
     public void Shake(float duration, float strength) => Instance.OnShake(duration, strength);

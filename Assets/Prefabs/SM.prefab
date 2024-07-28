@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6107455099233398432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6107455099233398438}
+  - component: {fileID: 6107455099233398433}
+  m_Layer: 0
+  m_Name: SM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6107455099233398438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107455099233398432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6107455099233398433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107455099233398432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9af74ae3a54f414c9c4d73c41b1a161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerFase:
+  - {fileID: 24100000, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+  sounds:
+  - name: RobotWalk
+    clip: {fileID: 8300000, guid: edb30c5d3dc810e4da578a53e6845709, type: 3}
+    volume: 0.3
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: -8669901539640003167, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: GameMusic
+    clip: {fileID: 8300000, guid: 99624ef079227064489979a4ef6d7717, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 1
+    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: GlitchSound
+    clip: {fileID: 8300000, guid: 48473ff7c86b71e458683c322403e59d, type: 3}
+    volume: 0.2
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 1
+    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: GlitchFX
+    clip: {fileID: 8300000, guid: 5d562940ba185364694d721390dca2fa, type: 3}
+    volume: 0.2
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 1
+    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}
+  - name: CameraFX
+    clip: {fileID: 8300000, guid: 332bf324fc1b0cc448ea06ca549fd932, type: 3}
+    volume: 0.253
+    volumeVariance: 0.18
+    pitch: 1.13
+    pitchVariance: 0.2
+    loop: 1
+    mixerGroup: {fileID: 2904178451889314337, guid: d248edd3668ecf742adc85e24821a3b8, type: 2}
+    source: {fileID: 0}

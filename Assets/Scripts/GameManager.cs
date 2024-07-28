@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     public  bool enableRot = true;
     public  bool inMiniGame = false;
     private bool finishedMiniGame = false;
-    public int goodGame;
-    public int badGame;
+    public float goodGame;
+    public float badGame;
     public int diffGames;
     public GameObject[] cameras;
     public Animator canvasAnim;
@@ -48,13 +48,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
+        if (goodGame >= 2)
+        {
+            CamFX.Instance.activeRandomTimer = true;
+        }
     }
 
     public void FinishingMinigame(GameState gm)
     {
         StartCoroutine(fadeOUT());
         gm_State = gm;
+        SoundManager.Instance.PlaySFX("GlitchFX");
         badGame++;
         
     }
@@ -62,6 +66,7 @@ public class GameManager : MonoBehaviour
     public void FinishingMinigame()
     {
         StartCoroutine(fadeOUT());
+        CamFX.Instance.addFXGrain();
         goodGame++;
         gm_State = GameState.glitch;
     }
