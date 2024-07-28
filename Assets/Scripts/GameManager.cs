@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private bool finishedMiniGame = false;
     public float goodGame;
     public float badGame;
-    public int diffGames;
+    public float diffGames;
     public GameObject[] cameras;
     public Animator canvasAnim;
     public GameObject[] minigames;
