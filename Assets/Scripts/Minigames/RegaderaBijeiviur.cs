@@ -17,6 +17,7 @@ public class RegaderaBijeiviur : MiniGameBrain
     public float timeRequestedToLose;
     public float time;
     public float timerWaterDrop;
+    public bool hasFinished;
 
     private void Update()
     {
@@ -25,7 +26,11 @@ public class RegaderaBijeiviur : MiniGameBrain
         {
             rb.gravityScale = 6;
         }
-
+        else if (MiniGameManager._minigamemanager.isDragging)
+        {
+            isOnRange = false;
+        }
+        
         if (isOnRange && timeRequestedToLose >= time)
         {
             plantGO.transform.localScale = Vector3.one * time / timeRequestedToLose;
@@ -35,12 +40,20 @@ public class RegaderaBijeiviur : MiniGameBrain
         if (time >= timeRequestedToWin && time <= timeRequestedToLose && !MiniGameManager._minigamemanager.isDragging)
         {
             GameManager.Instance.FinishingMinigame();
-            GameManager.Instance.goodGame++;
+            if (!hasFinished)
+            {
+                GameManager.Instance.goodGame++;
+                hasFinished = true;
+            }
         }
         if (timeRequestedToLose <= time)
         {
             GameManager.Instance.FinishingMinigame(GameManager.GameState.plant);
-            GameManager.Instance.badGame++;
+            if(!hasFinished)
+            {
+                GameManager.Instance.badGame++;
+                hasFinished = true;
+            }
         }
 
     }
@@ -62,12 +75,13 @@ private void OnTriggerStay2D(Collider2D collision)
         if (MiniGameManager._minigamemanager.isDragging)
         {
             this.transform.rotation = Quaternion.Euler(0, 0, 30);
-        }
-        timerWaterDrop += Time.deltaTime;
-        if (timerWaterDrop > 0.5f)
-        {
-            Instantiate(waterGO, spawnerTransform.position, Quaternion.Euler(0, 0, 0));
-            timerWaterDrop = 0;
+            
+            timerWaterDrop += Time.deltaTime;
+            if (timerWaterDrop > 0.5f)
+            {
+                Instantiate(waterGO, spawnerTransform.position, Quaternion.Euler(0, 0, 0));
+                timerWaterDrop = 0;
+            } 
         }
 
     }
@@ -75,12 +89,5 @@ private void OnTriggerStay2D(Collider2D collision)
     {
         isOnRange = false;
         this.transform.rotation = Quaternion.Euler(0, 0, 0);
-    }
-
-    private IEnumerator WaitToWin()
-    {
-        yield return new WaitForSeconds(1);
-        GameManager.Instance.goodGame++;
-        GameManager.Instance.FinishingMinigame();
     }
 }

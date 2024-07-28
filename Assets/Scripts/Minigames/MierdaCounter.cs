@@ -28,12 +28,12 @@ public class MierdaCounter : MonoBehaviour
     {
         if (!finishGame && (counter == 0 && (bien - mal) > 0 ))
         {
-            finishGame = true;
+            Debug.Log("hola entrando");
             GameManager.Instance.FinishingMinigame();
         }
         if (!finishGame && (counter == 0 && (mal - bien) > 0 ))
         {
-            finishGame = true;
+            Debug.Log("hola entrando");
             GameManager.Instance.FinishingMinigame(GameManager.GameState.window);
         }
         if (mal >= 6)

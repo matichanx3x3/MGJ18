@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
             case "BCVentana":
                 
                 Debug.Log("hola");
+                MierdaCounter._mierdaCounter.finishGame = true;
                 Destroy(minigames[2].gameObject);
                 Destroy(mgCols[2].gameObject);
                 //minigames[2].SetActive(false);

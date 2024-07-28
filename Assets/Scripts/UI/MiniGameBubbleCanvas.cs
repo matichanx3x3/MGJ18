@@ -10,7 +10,8 @@ public class MiniGameBubbleCanvas : MonoBehaviour
     public GameObject actualMinigame;
     private void Awake()
     {
-        if (Instance != null) {
+        if (Instance != null) 
+        {
             Destroy(gameObject);
         }
         else {
