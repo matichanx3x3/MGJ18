@@ -8,6 +8,7 @@ public class mmasgnnknan : MonoBehaviour
     public int counter;
     public int bad;
     public int good;
+    bool done;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -21,16 +22,19 @@ public class mmasgnnknan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (counter >= 3)
+        if (counter >= 3 && !done)
         {
             if(bad<good)
             {
                 GameManager.Instance.FinishingMinigame();
+                done = true;
             }  
             if(bad> good)
             {
                 GameManager.Instance.FinishingMinigame();
+                done = true;
             }
+            GameManager.Instance.gameDishes = true;
             GameManager.Instance.FinishingMinigame(GameManager.GameState.plant);
         }
     }
